@@ -13,6 +13,8 @@ import { CiHeart } from "react-icons/ci";
 
 const Feature = () => {
   let allProduct = useSelector((state) => state.product.data);
+  // console.log(allProduct);
+  
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(addingProduct(product));
@@ -27,13 +29,12 @@ const Feature = () => {
       setFeaturedProduct(filtering);
     }
   }, [allProduct]);
-  console.log(featuredProduct);
+  // console.log(featuredProduct);
 
   const settings = {
     dots: true,
     arrows: false,
     infinite: false,
-    autoplay: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
@@ -96,7 +97,7 @@ const Feature = () => {
                 <div className="text-center h-[120px] pt-[15px] group-hover:bg-[#2F1AC4] rounded-b-[10px] duration-300 group-hover:text-white">
                   <h3 className="text-[#FB2E86] font-semibold leading-[1]">{item.title}</h3>
                   <p>code: y45it13</p>
-                  <p>{item.price}</p>
+                  <p>${item.price}</p>
                 </div>
               </div>
             </div>
