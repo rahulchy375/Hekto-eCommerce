@@ -44,10 +44,10 @@ const Latest = () => {
   return (
     <section id="latestSection">
       <div className="container mx-auto p-[10px]">
-        <h2 className="text-center text-[35px] font-bold mt-[30px] cursor-default">
+        <h2 className="text-center text-[27px] sm:text-[35px] text-[#151875] font-bold mt-[30px] cursor-default">
           Latest Product
         </h2>
-        <ul className="flex gap-[15px] sm:gap-[30px] justify-center items-center  mb-[50px]">
+        <ul className="flex gap-[15px] sm:gap-[30px] justify-center items-center text-[#151875]  mb-[50px]">
           <li
             className="hover:text-pink-500 hover:underline duration-300 font-semibold cursor-pointer text-[13px] sm:text-[16px]"
             onClick={handleNewArrival}

@@ -34,7 +34,8 @@ const Feature = () => {
   const settings = {
     dots: true,
     arrows: false,
-    infinite: false,
+    infinite: true,
+    autoplay: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
@@ -69,7 +70,7 @@ const Feature = () => {
   return (
     <section id="featureSection">
       <div className="container mx-auto p-[10px]">
-        <h2 className="text-[#1A0B5B] text-[35px] font-bold text-center mt-[70px] mb-[20px]">
+        <h2 className="text-[#1A0B5B] text-[27px] sm:text-[35px] font-bold text-center mt-[70px] mb-[20px]">
           Featured Products
         </h2>
         <Slider {...settings}>
