@@ -7,6 +7,10 @@ import Latest from '../components/Latest'
 import Offer from '../components/Offer'
 import Unique from '../components/Unique'
 import Trending from '../components/Trending'
+import Discount from '../components/Discount'
+import Top from '../components/Top'
+import Promote from '../components/Promote'
+import LatestBlog from '../components/LatestBlog'
 
 const HomePage = () => {
   return (
@@ -19,6 +23,10 @@ const HomePage = () => {
     <Offer/>
     <Unique/>
     <Trending/>
+    <Discount/>
+    <Top/>
+    <Promote/>
+    <LatestBlog/>
     </>
   )
 }

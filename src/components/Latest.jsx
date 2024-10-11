@@ -10,7 +10,7 @@ const Latest = () => {
   let bestSeller = useRef();
   let feature = useRef();
   let allProduct = useSelector((state) => state.product.data);
-  console.log(allProduct);
+  // console.log(allProduct);
 
   let [filteredProduct, setFilteredProduct] = useState([]);
   const handleNewArrival = () => {
@@ -39,7 +39,7 @@ const Latest = () => {
     );
     setFilteredProduct(newArrival);
   }, [allProduct]);
-  console.log(filteredProduct);
+  // console.log(filteredProduct);
 
   return (
     <section id="latestSection">
