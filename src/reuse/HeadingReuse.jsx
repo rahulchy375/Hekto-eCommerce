@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const HeadingReuse = ({heading, toLink,toPage,fromPage}) => {
+const HeadingReuse = ({heading, toLink, toPage, fromPage}) => {
   return (
     <section className="bg-[#F6F5FF]">
       <div className="container mx-auto p-[10px] py-[70px] mb-[50px] text-center sm:text-left">

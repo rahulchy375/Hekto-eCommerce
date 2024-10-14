@@ -24,14 +24,14 @@ const NavSection = () => {
             <li className="mb-[5px] sm:mb-0 mr-[10px] group relative">
               Pages{" "}
               <div className="absolute w-[130px] sm:left-[50%] sm:translate-x-[-50%] sm:top-[70px] md:top-[77px] text-black top-[50%] translate-y-[-50%] left-[-130px] bg-[#f4f5f5] text-left group-hover:p-[10px] rounded-[7px] h-0 group-hover:h-auto overflow-hidden">
-                <div>About us</div>
+                <div> <Link to="/about">About us</Link></div>
                 <div> <Link to="/faq">FAQs</Link> </div>
-                <div>My Account</div>
+                <div> <Link to="/">My Account</Link> </div>
               </div>{" "}
             </li>
             <li className="mb-[5px] sm:mb-0 mr-[10px]">Shop</li>
             <li className="mb-[5px] sm:mb-0 mr-[10px]">Blogs</li>
-            <li className="">Contact</li>
+            <li className=""><Link to="/contact">Contact</Link></li>
           </ul>
           <div className="order-3 sm:hidden" onClick={handleBar}>
             {bars === true ? <VscChromeClose /> : <FaBars />}
