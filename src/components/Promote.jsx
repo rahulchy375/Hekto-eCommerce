@@ -1,6 +1,6 @@
 import React from "react";
 import promoteImg from "/promoteImg.png";
-import partners from "/partners.png"
+
 
 const Promote = () => {
   return (
@@ -24,12 +24,7 @@ const Promote = () => {
           </div>
         </div>
       </section>
-      <div className="container mx-auto p-[10px] mb-[20px]">
-        <div className="flex justify-center items-center">
-            <img src={partners} alt="" />
-        </div>
-        
-      </div>
+      
     </>
   );
 };

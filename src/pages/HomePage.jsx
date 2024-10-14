@@ -11,12 +11,12 @@ import Discount from '../components/Discount'
 import Top from '../components/Top'
 import Promote from '../components/Promote'
 import LatestBlog from '../components/LatestBlog'
+import Footer from '../components/Footer'
+import Partner from '../components/Partner'
 
 const HomePage = () => {
   return (
     <>
-    <HeaderSection/>
-    <NavSection/>
     <MainSection/>
     <Feature/>
     <Latest/>
