@@ -29,7 +29,7 @@ const NavSection = () => {
                 <div> <Link to="/">My Account</Link> </div>
               </div>{" "}
             </li>
-            <li className="mb-[5px] sm:mb-0 mr-[10px]">Shop</li>
+            <li className="mb-[5px] sm:mb-0 mr-[10px]"><Link to="/shop">Shop</Link></li>
             <li className="mb-[5px] sm:mb-0 mr-[10px]">Blogs</li>
             <li className=""><Link to="/contact">Contact</Link></li>
           </ul>

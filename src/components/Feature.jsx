@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import product from "../api/product.json";
-import { addingProduct } from "../slice/productSlice";
 import img1 from "/img1.png";
 import Slider from "react-slick";
 import { FaHeart, FaRegHeart, FaShoppingCart } from "react-icons/fa";
@@ -10,14 +8,14 @@ import { FaMagnifyingGlassPlus } from "react-icons/fa6";
 import { IoCartOutline } from "react-icons/io5";
 import { HiMagnifyingGlassPlus } from "react-icons/hi2";
 import { CiHeart } from "react-icons/ci";
+import { fetchProducts } from "../slice/productSlice";
 
 const Feature = () => {
   let allProduct = useSelector((state) => state.product.data);
-  // console.log(allProduct);
-  
+  console.log(allProduct);
   let dispatch = useDispatch();
   useEffect(() => {
-    dispatch(addingProduct(product));
+    dispatch(fetchProducts()); // Dispatch the action when the component mounts
   }, [dispatch]);
 
   let [featuredProduct, setFeaturedProduct] = useState([]);
