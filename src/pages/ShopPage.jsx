@@ -40,26 +40,25 @@ const ShopPage = () => {
   }, [allData]);
   // console.log(brandItem);
 
+  let [filteredCategory, setFilteredCategory] = useState([]);
 
-  let [filteredCategory, setFilteredCategory] = useState([])
-
-  const handleBrandItem = (bItem) =>{
+  const handleBrandItem = (bItem) => {
     let brandFiltering = allData.filter((item) => item.Brand === bItem);
     setFilteredCategory(brandFiltering);
-    
-  }
-  const handleCategoryItem = (cItem) =>{
+  };
+  const handleCategoryItem = (cItem) => {
     let categoryFiltering = allData.filter((item) => item.category === cItem);
     setFilteredCategory(categoryFiltering);
-  }
+  };
 
   const handlePriceItem = (value) => {
-    const {low,high} = value;
-    let priceFilter = allData.filter((item) =>item.price > low && item.price <= high)
+    const { low, high } = value;
+    let priceFilter = allData.filter(
+      (item) => item.price > low && item.price <= high
+    );
     setFilteredCategory(priceFilter);
   };
-  console.log(filteredCategory);
-  
+  // console.log(filteredCategory);
 
   let [show, setShow] = useState(false);
   const handleAccordion = () => {
@@ -94,9 +93,15 @@ const ShopPage = () => {
     }
   };
 
-  const handleSelect = (e) =>{
-    setTotalPost(e.target.value)
-  }
+  const handleSelect = (e) => {
+    setTotalPost(e.target.value);
+  };
+
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+  };
 
   return (
     <>
@@ -117,7 +122,10 @@ const ShopPage = () => {
               <div className="flex justify-between sm:gap-[130px] md:gap-[15px] lg:gap-[25px]">
                 <div className="text-[#3F509E]">
                   Per Page:
-                  <select className="border rounded-[3px] ml-[5px]" onChange={handleSelect}>
+                  <select
+                    className="border rounded-[3px] ml-[5px]"
+                    onChange={handleSelect}
+                  >
                     <option value="12">12</option>
                     <option value="6">6</option>
                     <option value="15">15</option>
@@ -156,15 +164,27 @@ const ShopPage = () => {
             >
               <ShopCateReuse title="Product Brand">
                 {brandItem.map((item) => (
-                  <div className="" onClick={()=>handleBrandItem(item)}>
-                    <ShopReuse item={item} />
+                  <div className="" onClick={() => handleBrandItem(item)}>
+                    <ShopReuse
+                      item={item}
+                      divChecked="bg-[#603EFF]"
+                      divUnchecked="bg-[#E5E0FC]"
+                      checkChecked="border-white"
+                      checkUnchecked="border-[#603EFF]"
+                    />
                   </div>
                 ))}
               </ShopCateReuse>
               <ShopCateReuse title="Category">
                 {categoryItem.map((item) => (
-                  <div className="" onClick={()=>handleCategoryItem(item)}>
-                    <ShopReuse item={item} />
+                  <div className="" onClick={() => handleCategoryItem(item)}>
+                    <ShopReuse
+                      item={item}
+                      divChecked="bg-[#FF3EB2]"
+                      divUnchecked="bg-[#FFDBF1]"
+                      checkChecked="border-white"
+                      checkUnchecked="border-[#FF3EB2]"
+                    />
                   </div>
                 ))}
               </ShopCateReuse>
@@ -189,27 +209,45 @@ const ShopPage = () => {
                     className=""
                     onClick={() => handlePriceItem({ low: 0.0, high: 99.99 })}
                   >
-                    0.00-99.99
+                    <ShopReuse
+                      item="0.00 - 99.99"
+                      divChecked="bg-[#FFCC2E]"
+                      divUnchecked="bg-[#FFF6DA]"
+                      checkChecked="border-white"
+                      checkUnchecked="border-[#FFCC2E]"
+                    />
                   </div>
                   <div
                     className=""
-                    onClick={() => handlePriceItem({ low: 100.0, high: 499.99 })}
+                    onClick={() =>
+                      handlePriceItem({ low: 100.0, high: 499.99 })
+                    }
                   >
-                    100.00-499.99
+                    <ShopReuse
+                      item="100.00 - 499.99"
+                      divChecked="bg-[#FFCC2E]"
+                      divUnchecked="bg-[#FFF6DA]"
+                      checkChecked="border-white"
+                      checkUnchecked="border-[#FFCC2E]"
+                    />
                   </div>
                 </div>
               </div>
             </div>
             <div className="sm:border-l sm:w-[65%] md:w-[70%] lg:w-[78%] xl:w-[83%]">
-              <Post setPost={setPost} />
+              <Post setPost={setPost} filteredCategory={filteredCategory} />
               <div className="">
-                <Pegination
-                  page={pageNum}
-                  paginating={paginate}
-                  prePage={prePage}
-                  next={nextPage}
-                  currentPage={currentPage}
-                />
+                {filteredCategory.length > 0 ? (
+                  ""
+                ) : (
+                  <Pegination
+                    page={pageNum}
+                    paginating={paginate}
+                    prePage={prePage}
+                    next={nextPage}
+                    currentPage={currentPage}
+                  />
+                )}
               </div>
             </div>
           </div>
