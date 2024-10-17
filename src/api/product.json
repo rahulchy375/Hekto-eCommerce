@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Cantilever chair",
-    "image": "img1.png",
+    "image": "/images/img1.png",
     "price": 19.99,
     "quantity": 12,
     "category": "chair",
@@ -32,7 +32,7 @@
   {
     "id": 2,
     "title": "Attractive chair",
-    "image": "img2.png",
+    "image": "/images/img2.png",
     "price": 32.99,
     "quantity": 5,
     "category": "chair",
@@ -62,7 +62,7 @@
   {
     "id": 3,
     "title": "Sofa chair",
-    "image": "img3.png",
+    "image": "/images/img3.png",
     "price": 24.99,
     "quantity": 8,
     "category": "chair",
@@ -92,7 +92,7 @@
   {
     "id": 4,
     "title": "Woden chair",
-    "image": "img4.png",
+    "image": "/images/img4.png",
     "price": 13.99,
     "quantity": 25,
     "category": "chair",
@@ -122,7 +122,7 @@
   {
     "id": 5,
     "title": "Red sofa chair",
-    "image": "img5.png",
+    "image": "/images/img5.png",
     "price": 69.99,
     "quantity": 7,
     "category": "chair",
@@ -152,7 +152,7 @@
   {
     "id": 6,
     "title": "Black plastic chair",
-    "image": "img6.png",
+    "image": "/images/img6.png",
     "price": 78.99,
     "quantity": 10,
     "category": "chair",
@@ -182,7 +182,7 @@
   {
     "id": 7,
     "title": "Luxurious sofa chair",
-    "image": "img7.png",
+    "image": "/images/img7.png",
     "price": 110.99,
     "quantity": 16,
     "category": "chair",
@@ -212,7 +212,7 @@
   {
     "id": 8,
     "title": "Woden sofa chair",
-    "image": "img8.png",
+    "image": "/images/img8.png",
     "price": 30.99,
     "quantity": 11,
     "category": "chair",
@@ -242,7 +242,7 @@
   {
     "id": 9,
     "title": "Sofa chair",
-    "image": "img9.png",
+    "image": "/images/img9.png",
     "price": 74.99,
     "quantity": 15,
     "category": "chair",
@@ -272,7 +272,7 @@
   {
     "id": 10,
     "title": "Cantilever chair",
-    "image": "img1.png",
+    "image": "/images/img1.png",
     "price": 19.99,
     "quantity": 12,
     "category": "chair",
@@ -302,7 +302,7 @@
   {
     "id": 11,
     "title": "Small sofa chair",
-    "image": "img10.png",
+    "image": "/images/img10.png",
     "price": 34.99,
     "quantity": 32,
     "category": "chair",
@@ -332,7 +332,7 @@
   {
     "id": 12,
     "title": "Small sofa chair",
-    "image": "img10.png",
+    "image": "/images/img10.png",
     "price": 34.99,
     "quantity": 32,
     "category": "chair",
@@ -362,7 +362,7 @@
   {
     "id": 13,
     "title": "Red plastic chair",
-    "image": "img11.png",
+    "image": "/images/img11.png",
     "price": 22.99,
     "quantity": 19,
     "category": "chair",
@@ -392,7 +392,7 @@
   {
     "id": 14,
     "title": "Red plastic chair",
-    "image": "img11.png",
+    "image": "/images/img11.png",
     "price": 22.99,
     "quantity": 19,
     "category": "chair",
@@ -422,7 +422,7 @@
   {
     "id": 15,
     "title": "Black plastic chair",
-    "image": "img12.png",
+    "image": "/images/img12.png",
     "price": 78.99,
     "quantity": 10,
     "category": "chair",
@@ -452,7 +452,7 @@
   {
     "id": 16,
     "title": "Black plastic chair",
-    "image": "img12.png",
+    "image": "/images/img12.png",
     "price": 78.99,
     "quantity": 10,
     "category": "chair",
@@ -482,7 +482,7 @@
   {
     "id": 17,
     "title": "White plastic chair",
-    "image": "img13.png",
+    "image": "/images/img13.png",
     "price": 79.99,
     "quantity": 5,
     "category": "chair",
@@ -512,7 +512,7 @@
   {
     "id": 18,
     "title": "White plastic chair",
-    "image": "img13.png",
+    "image": "/images/img13.png",
     "price": 79.99,
     "quantity": 5,
     "category": "chair",
@@ -542,7 +542,7 @@
   {
     "id": 19,
     "title": "White sofa chair",
-    "image": "img14.png",
+    "image": "/images/img14.png",
     "price": 44.99,
     "quantity": 13,
     "category": "chair",
@@ -572,7 +572,7 @@
   {
     "id": 20,
     "title": "Plastic wooden chair",
-    "image": "img15.png",
+    "image": "/images/img15.png",
     "price": 26.99,
     "quantity": 24,
     "category": "chair",
@@ -602,7 +602,7 @@
   {
     "id": 21,
     "title": "Small sofa chair",
-    "image": "img16.png",
+    "image": "/images/img16.png",
     "price": 18.99,
     "quantity": 28,
     "category": "chair",
@@ -632,7 +632,7 @@
   {
     "id": 22,
     "title": "White sofa chair",
-    "image": "img14.png",
+    "image": "/images/img14.png",
     "price": 44.99,
     "quantity": 13,
     "category": "chair",
@@ -662,7 +662,7 @@
   {
     "id": 23,
     "title": "Red plastic chair",
-    "image": "img17.png",
+    "image": "/images/img17.png",
     "price": 16.99,
     "quantity": 13,
     "category": "chair",
@@ -692,7 +692,7 @@
   {
     "id": 24,
     "title": "Vitae suspendise sed",
-    "image": "img18.png",
+    "image": "/images/img18.png",
     "price": 84.99,
     "quantity": 5,
     "category": "chair",
@@ -722,7 +722,7 @@
   {
     "id": 25,
     "title": "Ultricies condimentum imperdiet",
-    "image": "img19.png",
+    "image": "/images/img19.png",
     "price": 239.99,
     "quantity": 5,
     "category": "chair",
@@ -752,7 +752,7 @@
   {
     "id": 26,
     "title": "Ultrices mauris sit",
-    "image": "img20.png",
+    "image": "/images/img20.png",
     "price": 219.99,
     "quantity": 13,
     "category": "chair",
@@ -782,7 +782,7 @@
   {
     "id": 27,
     "title": "Vel elit euismod",
-    "image": "img21.png",
+    "image": "/images/img21.png",
     "price": 89.99,
     "quantity": 24,
     "category": "chair",
@@ -812,7 +812,7 @@
   {
     "id": 28,
     "title": "Lectus vulputate faucibus",
-    "image": "img22.png",
+    "image": "/images/img22.png",
     "price": 119.99,
     "quantity": 24,
     "category": "head phone",
@@ -842,7 +842,7 @@
   {
     "id": 29,
     "title": "Vestibulum magna laoreet",
-    "image": "img23.png",
+    "image": "/images/img23.png",
     "price": 72.99,
     "quantity": 12,
     "category": "watch",
@@ -872,7 +872,7 @@
   {
     "id": 30,
     "title": "Cras scelerisque velit",
-    "image": "img24.png",
+    "image": "/images/img24.png",
     "price": 129.99,
     "quantity": 12,
     "category": "camera",
@@ -902,7 +902,7 @@
   {
     "id": 31,
     "title": "Purus risus, ut",
-    "image": "img25.png",
+    "image": "/images/img25.png",
     "price": 49.99,
     "quantity": 12,
     "category": "Bags",
@@ -932,7 +932,7 @@
   {
     "id": 32,
     "title": "Sed at fermentum",
-    "image": "img26.png",
+    "image": "/images/img26.png",
     "price": 54.99,
     "quantity": 13,
     "category": "Bags",
@@ -962,7 +962,7 @@
   {
     "id": 33,
     "title": "Sollicitudin amet orci",
-    "image": "img27.png",
+    "image": "/images/img27.png",
     "price": 89.99,
     "quantity": 10,
     "category": "head phone",
@@ -992,7 +992,7 @@
   {
     "id": 34,
     "title": "Sollicitudin amet orci",
-    "image": "img28.png",
+    "image": "/images/img28.png",
     "price": 34.99,
     "quantity": 6,
     "category": "watch",
@@ -1022,7 +1022,7 @@
   {
     "id": 35,
     "title": "Woman bag",
-    "image": "img29.png",
+    "image": "/images/img29.png",
     "price": 52.99,
     "quantity": 15,
     "category": "Bags",
@@ -1052,7 +1052,7 @@
   {
     "id": 36,
     "title": "Pellentesque condimentum ac",
-    "image": "img30.png",
+    "image": "/images/img30.png",
     "price": 29.99,
     "quantity": 9,
     "category": "watch",
@@ -1082,7 +1082,7 @@
   {
     "id": 37,
     "title": "Fusce pellentesque at",
-    "image": "img31.png",
+    "image": "/images/img31.png",
     "price": 34.99,
     "quantity": 14,
     "category": "watch",
@@ -1112,7 +1112,7 @@
   {
     "id": 38,
     "title": "Vitae suspendise sed",
-    "image": "img18.png",
+    "image": "/images/img18.png",
     "price": 84.99,
     "quantity": 5,
     "category": "chair",
@@ -1142,7 +1142,7 @@
   {
     "id": 39,
     "title": "Ultricies condimentum imperdiet",
-    "image": "img19.png",
+    "image": "/images/img19.png",
     "price": 239.99,
     "quantity": 5,
     "category": "chair",
@@ -1172,7 +1172,7 @@
   {
     "id": 40,
     "title": "Ultrices mauris sit",
-    "image": "img20.png",
+    "image": "/images/img20.png",
     "price": 219.99,
     "quantity": 13,
     "category": "chair",
@@ -1202,7 +1202,7 @@
   {
     "id": 41,
     "title": "Woden sofa chair",
-    "image": "img8.png",
+    "image": "/images/img8.png",
     "price": 29.99,
     "quantity": 11,
     "category": "chair",
@@ -1232,7 +1232,7 @@
   {
     "id": 42,
     "title": "B&B Italian Sofa ",
-    "image": "img32.png",
+    "image": "/images/img32.png",
     "price": 300.99,
     "quantity": 11,
     "category": "chair",
