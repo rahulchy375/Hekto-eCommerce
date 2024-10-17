@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import img5 from "/img5.png";
 import { useSelector } from "react-redux";
 
 const Trending = () => {

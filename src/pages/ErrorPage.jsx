@@ -1,6 +1,6 @@
 import React from "react";
 import HeadingReuse from "../reuse/HeadingReuse";
-import errorImg from "/errorImg.png";
+import errorImg from "/images/errorImg.png";
 import { Link } from "react-router-dom";
 
 const ErrorPage = () => {

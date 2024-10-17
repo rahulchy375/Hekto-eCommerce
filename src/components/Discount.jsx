@@ -1,9 +1,9 @@
 import React, { act, useState } from "react";
 import { IoCheckmark } from "react-icons/io5";
-import bg from "/bg.png";
-import discountImg from "/discount.png";
-import discountImg2 from "/img8.png"
-import discountImg3 from "/img20.png"
+import bg from "/images/bg.png";
+import discountImg from "/images/discount.png";
+import discountImg2 from "/images/img8.png"
+import discountImg3 from "/images/img20.png"
 import DiscountReuse from "../reuse/DiscountReuse";
 
 const Discount = () => {

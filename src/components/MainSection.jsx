@@ -1,6 +1,6 @@
 import React from "react";
-import mainImg from "/mainImg.png";
-import mainImg2 from "/mainImg2.png";
+import mainImg from "/images/mainImg.png";
+import mainImg2 from "/images/mainImg2.png";
 
 const MainSection = () => {
   

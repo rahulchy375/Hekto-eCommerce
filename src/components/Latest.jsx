@@ -3,7 +3,7 @@ import { CiHeart } from "react-icons/ci";
 import { HiMagnifyingGlassPlus } from "react-icons/hi2";
 import { IoCartOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
-import saleImg from "/sales.png";
+import saleImg from "/images/sales.png";
 
 const Latest = () => {
   let newArrive = useRef();

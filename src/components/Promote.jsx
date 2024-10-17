@@ -1,5 +1,5 @@
 import React from "react";
-import promoteImg from "/promoteImg.png";
+import promoteImg from "/images/promoteImg.png";
 
 
 const Promote = () => {

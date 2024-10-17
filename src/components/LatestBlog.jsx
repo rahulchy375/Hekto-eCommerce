@@ -1,9 +1,9 @@
 import React from "react";
 import { FaPenNib } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
-import blog1 from "/blog1.png";
-import blog2 from "/blog2.png";
-import blog3 from "/blog3.png";
+import blog1 from "/images/blog1.png";
+import blog2 from "/images/blog2.png";
+import blog3 from "/images/blog3.png";
 import LatestBlogReuse from "../reuse/LatestBlogReuse";
 
 const LatestBlog = () => {

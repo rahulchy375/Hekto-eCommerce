@@ -1,8 +1,8 @@
 import React from "react";
-import freeDelivery from "/freeDelivery.png";
-import cashback from "/cashback.png";
-import customerService from "/customerService.png";
-import quality from "/premium-quality.png";
+import freeDelivery from "/images/freeDelivery.png";
+import cashback from "/images/cashback.png";
+import customerService from "/images/customerService.png";
+import quality from "/images/premium-quality.png";
 import OfferReuse from "../reuse/OfferReuse";
 
 const Offer = () => {

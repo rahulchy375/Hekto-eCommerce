@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import HeadingReuse from "../reuse/HeadingReuse";
-import aboutImg from "/aboutImg.png";
+import aboutImg from "/images/aboutImg.png";
 import Offer from "../components/Offer";
-import client1 from "/client1.png";
-import client2 from "/client2.png";
-import client3 from "/client3.png";
+import client1 from "/images/client1.png";
+import client2 from "/images/client2.png";
+import client3 from "/images/client3.png";
 import Slider from "react-slick";
 import AboutReuse from "../reuse/AboutReuse";
 

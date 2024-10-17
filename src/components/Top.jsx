@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import img8 from "/img8.png";
 import Slider from "react-slick/lib/slider";
 import { useSelector } from "react-redux";
 

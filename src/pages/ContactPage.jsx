@@ -1,6 +1,6 @@
 import React from "react";
 import HeadingReuse from "../reuse/HeadingReuse";
-import contactImg from "/ContactImg.png";
+import contactImg from "/images/ContactImg.png";
 
 const ContactPage = () => {
   return (

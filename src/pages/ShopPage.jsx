@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../slice/productSlice";
 import ShopCateReuse from "../reuse/ShopCateReuse";
 import ShopReuse from "../reuse/ShopReuse";
-import img from "/img5.png";
 import { CiHeart } from "react-icons/ci";
 import { GoZoomIn } from "react-icons/go";
 import { HiMagnifyingGlassPlus } from "react-icons/hi2";

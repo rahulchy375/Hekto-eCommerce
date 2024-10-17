@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import img1 from "/img1.png";
 import Slider from "react-slick";
 import { FaHeart, FaRegHeart, FaShoppingCart } from "react-icons/fa";
 import { LuRefreshCcw } from "react-icons/lu";

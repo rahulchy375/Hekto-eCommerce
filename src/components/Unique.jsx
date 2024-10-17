@@ -1,5 +1,5 @@
 import React from "react";
-import uniqueImg from "/uniqueImg.png";
+import uniqueImg from "/images/uniqueImg.png";
 
 const Unique = () => {
   return (

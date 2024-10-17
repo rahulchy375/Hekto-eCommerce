@@ -1,7 +1,6 @@
 import React from "react";
 import { FaPenNib } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
-import blog1 from "/blog1.png";
 
 const LatestBlogReuse = ({ blog1, title, para }) => {
   return (
