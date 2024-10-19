@@ -5,8 +5,11 @@ import { FaAngleDown } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 import { IoCartOutline, IoPersonOutline } from "react-icons/io5";
 import { MdPhoneInTalk } from "react-icons/md";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const HeaderSection = () => {
+  let cartProduct = useSelector((state)=>state.product.cart);
   let [threeDot, setThreeDot] = useState(false);
   let handleThreeDot = () => {
     setThreeDot(!threeDot);
@@ -17,7 +20,7 @@ const HeaderSection = () => {
   return (
     <section id="headerSection" className="bg-[#7E33E0]">
       <div className="container mx-auto p-[10px]">
-        <div className="flex justify-between items-center text-[#F1F1F1]">
+        <div className="flex justify-between items-center relative text-[#F1F1F1]">
           <div className="md:flex">
             <div className="flex items-center text-[15px] md:text-[16px] font-semibold md:mr-[15px]">
               {" "}
@@ -29,7 +32,7 @@ const HeaderSection = () => {
             </div>
           </div>
           <div className="visible sm:hidden" onClick={handleThreeDot}>
-            <BsThreeDotsVertical className="text-[22px]"/>
+            <BsThreeDotsVertical className="text-[22px]" />
           </div>
           <div
             className={`${
@@ -48,7 +51,12 @@ const HeaderSection = () => {
               Wishlist <CiHeart />
             </div>
             <div className="">
-              <IoCartOutline className="text-[25px] mb-[10px] sm:mb-[0px]" />
+              <Link to="/cart">
+                <IoCartOutline className="text-[25px] mb-[10px] sm:mb-[0px]" />
+                {cartProduct.length > 0 ? 
+                <div className="w-[25px] h-[25px] absolute top-[-10px] right-[-15px] bg-pink-200 rounded-full  text-blue-700 flex justify-center items-center">{cartProduct.length}</div>
+                :""}
+              </Link>
             </div>
           </div>
         </div>

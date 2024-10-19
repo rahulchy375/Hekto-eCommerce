@@ -13,6 +13,7 @@ import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import ShopPage from "./pages/ShopPage";
 import ProductDetails from "./pages/ProductDetails";
+import CartPage from "./pages/CartPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
       <Route path="/faq" element={<FAQ/>} />
       <Route path="/contact" element={<ContactPage/>} />
       <Route path="/about" element={<AboutPage/>} />
+      <Route path="/cart" element={<CartPage/>} />
       <Route path="*" element={<ErrorPage/>} />
     </Route>
   )
