@@ -11,6 +11,7 @@ import {
   increment,
   removeProduct,
 } from "../slice/productSlice";
+import { Link } from "react-router-dom";
 
 const CartPage = () => {
   let cartProduct = useSelector((state) => state.product.cart);
@@ -177,7 +178,8 @@ const CartPage = () => {
                   </div>
 
                   <button className="mt-[20px] outline-none bg-[#19D16F] text-white w-full py-[7px] rounded-[5px]">
-                    Proceed To Checkout
+                    <Link to="/checkout">Proceed To Checkout</Link>
+                    
                   </button>
                 </div>
               </div>

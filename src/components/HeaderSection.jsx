@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const HeaderSection = () => {
-  let cartProduct = useSelector((state)=>state.product.cart);
+  let cartProduct = useSelector((state) => state.product.cart);
   let [threeDot, setThreeDot] = useState(false);
   let handleThreeDot = () => {
     setThreeDot(!threeDot);
@@ -44,8 +44,10 @@ const HeaderSection = () => {
             <div className="flex items-center mb-[10px] sm:mb-[0px] sm:mr-[10px]">
               English <FaAngleDown />
             </div>
-            <div className="flex items-center mb-[10px] sm:mb-[0px] sm:mr-[10px]">
-              Login <IoPersonOutline />
+            <div className="">
+              <Link to="/signUp" className="flex items-center mb-[10px] sm:mb-[0px] sm:mr-[10px]">
+                Sign Up <IoPersonOutline />
+              </Link>
             </div>
             <div className="flex items-center mb-[10px] sm:mb-[0px] sm:mr-[10px]">
               Wishlist <CiHeart />
@@ -53,9 +55,13 @@ const HeaderSection = () => {
             <div className="">
               <Link to="/cart">
                 <IoCartOutline className="text-[25px] mb-[10px] sm:mb-[0px]" />
-                {cartProduct.length > 0 ? 
-                <div className="w-[25px] h-[25px] absolute top-[-10px] right-[-15px] bg-pink-200 rounded-full  text-blue-700 flex justify-center items-center">{cartProduct.length}</div>
-                :""}
+                {cartProduct.length > 0 ? (
+                  <div className="w-[25px] h-[25px] absolute bottom-[27px] right-[42px] md:top-[-10px] sm:top-[-2px] sm:right-[-10px] md:right-[-15px] bg-pink-200 rounded-full  text-blue-700 flex justify-center items-center">
+                    {cartProduct.length}
+                  </div>
+                ) : (
+                  ""
+                )}
               </Link>
             </div>
           </div>
