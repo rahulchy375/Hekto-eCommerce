@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick/lib/slider";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Top = () => {
   let allData = useSelector((state) => state.product.data);
@@ -13,7 +14,7 @@ const Top = () => {
       setTopProduct(filtering);
     }
   }, [allData]);
-  console.log(topProduct);
+  // console.log(topProduct);
 
   const settings = {
     dots: true,
@@ -58,15 +59,15 @@ const Top = () => {
             Top Categories
           </h2>
           <Slider {...settings}>
-            {topProduct.map((item) => (
-              <div className="">
+            {topProduct.map((item,i) => (
+              <div className="" key={i}>
                 <div className="flex justify-center items-center flex-col mb-[20px] pt-[20px]">
                   <div className="relative h-[230px]  hover:bg-violet-700 w-[230px] group flex justify-center items-center rounded-full transition-all duration-300">
                     <div className="absolute group group-hover:translate-x-[5px] group-hover:translate-y-[-5px] bg-[#F6F7FB] flex justify-center items-center transition-all duration-300 h-[230px] w-[230px] rounded-full overflow-hidden ">
                       <img src={item.image} alt="" className="w-[70%]" />
                       <div className="absolute duration-300 bottom-0 left-[50%] translate-x-[-50%] h-[0px] group-hover:h-[50px]">
                         <div className="outline-none bg-[#08D15F] py-[5px] px-[10px]">
-                          View Shop
+                          <Link to={`/shop/${item.id}`}>View Shop</Link>
                         </div>
                       </div>
                     </div>

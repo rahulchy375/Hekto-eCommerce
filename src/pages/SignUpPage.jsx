@@ -15,6 +15,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { DNA } from "react-loader-spinner";
 
 const SignUpPage = () => {
+  let navigate = useNavigate();
   let [showPassword, setShowPassword] = useState(false);
   let [showConfirmPassword, setShowConfirmPassword] = useState(false);
   let [checked, setChecked] = useState(false);
@@ -143,6 +144,7 @@ const SignUpPage = () => {
           toast.success("Sign up successful!");
           const user = userCredential.user;
           console.log(user);
+          navigate("/login");
 
           // ...
         })

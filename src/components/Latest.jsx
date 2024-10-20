@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import { HiMagnifyingGlassPlus } from "react-icons/hi2";
 import { IoCartOutline } from "react-icons/io5";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import saleImg from "/images/sales.png";
+import { addingProductToCart } from "../slice/productSlice";
 
 const Latest = () => {
+  let dispatch = useDispatch();
   let newArrive = useRef();
   let bestSeller = useRef();
   let feature = useRef();
@@ -40,6 +42,10 @@ const Latest = () => {
     setFilteredProduct(newArrival);
   }, [allProduct]);
   // console.log(filteredProduct);
+
+  const handleAddToCart = (item) =>{
+    dispatch(addingProductToCart({...item, qan:1}))
+  }
 
   return (
     <section id="latestSection">
@@ -87,7 +93,7 @@ const Latest = () => {
 
                   <div className="absolute overflow-hidden bottom-[0px] left-[10px] h-0 group-hover:h-[130px] duration-300">
                     <div className="">
-                      <IoCartOutline className="text-[30px] text-[#1DB4E7] hover:bg-[#EEEFFB] rounded-full p-[5px] hover:text-[#2F1AC4]" />
+                      <IoCartOutline onClick={()=> handleAddToCart(item)} className="text-[30px] text-[#1DB4E7] hover:bg-[#EEEFFB] rounded-full p-[5px] hover:text-[#2F1AC4]" />
                       <CiHeart className="text-[30px] text-[#1DB4E7] hover:bg-[#EEEFFB] rounded-full p-[5px] hover:text-[#2F1AC4]" />
                       <HiMagnifyingGlassPlus className="text-[30px] text-[#1DB4E7] hover:bg-[#EEEFFB] rounded-full p-[5px] hover:text-[#2F1AC4]" />
                     </div>

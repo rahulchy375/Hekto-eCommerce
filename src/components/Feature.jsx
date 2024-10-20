@@ -7,11 +7,12 @@ import { FaMagnifyingGlassPlus } from "react-icons/fa6";
 import { IoCartOutline } from "react-icons/io5";
 import { HiMagnifyingGlassPlus } from "react-icons/hi2";
 import { CiHeart } from "react-icons/ci";
-import { fetchProducts } from "../slice/productSlice";
+import { addingProductToCart, addingProductToCartFromShop, fetchProducts } from "../slice/productSlice";
+import { Link } from "react-router-dom";
 
 const Feature = () => {
   let allProduct = useSelector((state) => state.product.data);
-  console.log(allProduct);
+  // console.log(allProduct);
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchProducts()); // Dispatch the action when the component mounts
@@ -64,6 +65,13 @@ const Feature = () => {
     ],
   };
 
+  const handleAddToCart = (item) =>{
+    console.log(item);
+    
+    // dispatch(addingProductToCartFromShop({...item, qan:1}))
+    dispatch(addingProductToCart({...item, qan:1}))
+  }
+
   return (
     <section id="featureSection">
       <div className="container mx-auto p-[10px]">
@@ -75,11 +83,12 @@ const Feature = () => {
             <div className="!flex justify-center pb-[15px] group" key={i}>
               <div className="shadow !w-[200px] rounded-[10px] ">
                 <div className="h-[200px] flex justify-center items-center hover:bg-[#F7F7F7] bg-[#F6F7FB] rounded-t-[10px] rounded-r-[10px] rounded-b-[0px] group relative">
-                  <img src={item.image} alt="" />
+                  <Link to={`/shop/${item.id}`}><img src={item.image} alt="" /></Link>
+                  
 
                   <div className="absolute top-[-40px] left-[10px] h-0 group-hover:top-[10px] duration-300">
                     <div className="flex gap-[5px]">
-                      <IoCartOutline className="text-[30px] text-[#1DB4E7] hover:bg-[#EEEFFB] rounded-full p-[5px] hover:text-[#2F1AC4]" />
+                      <IoCartOutline onClick={() =>handleAddToCart(item)} className="text-[30px] text-[#1DB4E7] hover:bg-[#EEEFFB] rounded-full p-[5px] hover:text-[#2F1AC4]" />
                       <CiHeart className="text-[30px] text-[#1DB4E7] hover:bg-[#EEEFFB] rounded-full p-[5px] hover:text-[#2F1AC4]" />
                       <HiMagnifyingGlassPlus className="text-[30px] text-[#1DB4E7] hover:bg-[#EEEFFB] rounded-full p-[5px] hover:text-[#2F1AC4]" />
                     </div>

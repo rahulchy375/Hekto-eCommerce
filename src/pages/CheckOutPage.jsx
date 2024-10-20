@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import HeadingReuse from "../reuse/HeadingReuse";
 import CheckoutReuse from "../reuse/CheckoutReuse";
 import { useSelector } from "react-redux";
-import img from "/images/img8.png";
 
 const CheckOutPage = () => {
   let cartProduct = useSelector((state) => state.product.cart);
-  console.log(cartProduct);
+  let userData = useSelector((state) => state.user.value);
 
   let [isChecked, setIsChecked] = useState(false);
   const handleCheckboxChange = () => {
@@ -31,12 +30,12 @@ const CheckOutPage = () => {
 
       <section>
         <div className="container mx-auto p-[10px] sm:flex justify-between">
-          <div className="bg-[#F8F8FD] px-[10px] lg:px-[25px] py-[20px] mt-[30px] sm:w-[52%] md:w-[60%] lg:w-[65%] xl:w-[70%] rounded-[5px]">
+          <div className="bg-[#F8F8FD] px-[10px] lg:px-[25px] py-[20px] mt-[30px] sm:w-[52%] md:w-[60%] lg:w-[65%] xl:w-[70%] h-[570px] md:h-[510px] rounded-[5px]">
             <div className="mb-[30px]">
               <h2 className="text-[#1D3178] text-[25px] font-bold">
                 Contact Information
               </h2>
-              <CheckoutReuse place="Email or mobile phone number" />
+              <CheckoutReuse place="Email or mobile phone number" value={userData.email}/>
               <div className="flex items-center mt-[10px]">
                 <label className="relative flex items-center cursor-pointer">
                   <input
@@ -69,14 +68,14 @@ const CheckOutPage = () => {
               </h2>
               <div className="">
                 <div className="md:flex justify-between">
-                  <CheckoutReuse place="First Name" w="md:w-[48%]"/>
-                  <CheckoutReuse place="Last Name" w="md:w-[48%]"/>
+                  <CheckoutReuse place="First Name" w="md:w-[48%]" value= {userData.firstName}/>
+                  <CheckoutReuse place="Last Name" w="md:w-[48%]" value= {userData.lastName}/>
                 </div>
-                <CheckoutReuse place="Address" />
-                <CheckoutReuse place="City" />
+                <CheckoutReuse place="Address" value={userData.street}/>
+                <CheckoutReuse place="City" value={userData.city}/>
                 <div className="md:flex gap-[25px]">
-                  <CheckoutReuse place="Country" w="md:w-[50%]"/>
-                  <CheckoutReuse place="Post Code" w="md:w-[50%]"/>
+                  <CheckoutReuse place="Country" w="md:w-[50%]" value={userData.country}/>
+                  <CheckoutReuse place="Post Code" w="md:w-[50%]" value={userData.postCode}/>
                 </div>
               </div>
               
@@ -110,9 +109,7 @@ const CheckOutPage = () => {
                 <div className="">Total:</div>
                 <div className="">${Math.floor((subTotal + subTotal/100*5)).toFixed(2)}</div>
               </div>
-              <div className="flex justify-end">
-                <button className="px-[25px] mt-[40px] py-[6px] bg-[#FB2E86] rounded-[5px] text-white">Payment</button>
-              </div>
+                <button className="w-full mt-[40px] py-[6px] bg-[#FB2E86] rounded-[5px] text-white">Payment</button>
               
             </div>
           </div>

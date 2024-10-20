@@ -4,17 +4,19 @@ import img from "/images/img7.png";
 import { FaMinus } from "react-icons/fa";
 import { TiDelete, TiMinus, TiPlus } from "react-icons/ti";
 import { useDispatch, useSelector } from "react-redux";
-import contactImg from "/images/ContactImg.png"
+import contactImg from "/images/ContactImg.png";
 import {
   clearCart,
   decrement,
   increment,
   removeProduct,
 } from "../slice/productSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CartPage = () => {
   let cartProduct = useSelector((state) => state.product.cart);
+  let loginCheck = useSelector((state) => state.login.value);
+  let navigate = useNavigate();
   let [isChecked, setIsChecked] = useState(false);
   let dispatch = useDispatch();
   const handleCheckboxChange = () => {
@@ -28,6 +30,14 @@ const CartPage = () => {
     },
     { subTotal: 0 }
   );
+
+  const handleCheckOut = () => {
+    if (loginCheck) {
+      navigate("/checkout")
+    }else{
+      navigate("/login");
+    }
+  };
 
   return (
     <>
@@ -51,69 +61,74 @@ const CartPage = () => {
                 </div>
               </div>
 
-              {cartProduct.length > 0 ? 
-
-              <div className="">
-              {cartProduct.map((item, i) => (
-                <div
-                  className="flex items-center border-b pb-[5px] mb-[20px]"
-                  key={i}
-                >
-                  <div className="flex items-center w-[38%] lg:w-[203px] xl:w-[370px]">
-                    <div className="w-[40%] relative lg:w-[50px]">
-                      <img src={item.image} alt="" />
-                      <div
-                        className="absolute top-[-7px] left-[-6px]"
-                        onClick={() => dispatch(removeProduct(i))}
-                      >
-                        <TiDelete className="text-[18px]" />
+              {cartProduct.length > 0 ? (
+                <div className="">
+                  {cartProduct.map((item, i) => (
+                    <div
+                      className="flex items-center border-b pb-[5px] mb-[20px]"
+                      key={i}
+                    >
+                      <div className="flex items-center w-[38%] lg:w-[203px] xl:w-[370px]">
+                        <div className="w-[40%] relative lg:w-[50px]">
+                          <img src={item.image} alt="" />
+                          <div
+                            className="absolute top-[-7px] left-[-6px]"
+                            onClick={() => dispatch(removeProduct(i))}
+                          >
+                            <TiDelete className="text-[18px]" />
+                          </div>
+                        </div>
+                        <marquee className="w-[60%] lg:w-auto lg:hidden">
+                          {item.title}
+                        </marquee>
+                        <div className="w-[60%] lg:w-auto hidden lg:block ml-[15px]">
+                          {item.title}
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center w-[72%]">
+                        <div className="lg:ml-[29px]">${item.price}</div>
+                        <div className="border leading-[0px] flex">
+                          <button
+                            className="border-r px-[5px] pb-[5px]"
+                            onClick={() => dispatch(decrement(i))}
+                          >
+                            {" "}
+                            <TiMinus />{" "}
+                          </button>{" "}
+                          <div className="px-[7px] flex cursor-default justify-center items-center">
+                            {item.qan}
+                          </div>{" "}
+                          <button
+                            className="border-l px-[5px] font-bold py-[5px]"
+                            onClick={() => dispatch(increment(i))}
+                          >
+                            <TiPlus />
+                          </button>
+                        </div>
+                        <div className="">
+                          ${(item.price * item.qan).toFixed(2)}
+                        </div>
                       </div>
                     </div>
-                    <marquee className="w-[60%] lg:w-auto lg:hidden">
-                      {item.title}
-                    </marquee>
-                    <div className="w-[60%] lg:w-auto hidden lg:block ml-[15px]">
-                      {item.title}
+                  ))}
+                </div>
+              ) : (
+                <div className="">
+                  <div className="flex justify-center items-center">
+                    <div className="flex justify-center items-center mt-[30px] sm:w-[350px] md:w-[450px]">
+                      <img
+                        src={contactImg}
+                        alt=""
+                        className="w-[80%] sm:w-auto"
+                      />
                     </div>
                   </div>
-                  <div className="flex justify-between items-center w-[72%]">
-                    <div className="lg:ml-[29px]">${item.price}</div>
-                    <div className="border leading-[0px] flex">
-                      <button
-                        className="border-r px-[5px] pb-[5px]"
-                        onClick={() => dispatch(decrement(i))}
-                      >
-                        {" "}
-                        <TiMinus />{" "}
-                      </button>{" "}
-                      <div className="px-[7px] flex cursor-default justify-center items-center">
-                        {item.qan}
-                      </div>{" "}
-                      <button
-                        className="border-l px-[5px] font-bold py-[5px]"
-                        onClick={() => dispatch(increment(i))}
-                      >
-                        <TiPlus />
-                      </button>
-                    </div>
-                    <div className="">
-                      ${(item.price * item.qan).toFixed(2)}
-                    </div>
+
+                  <div className="text-[30px] md:text-[50px] text-slate-200 font-bold text-center mt-[30px]">
+                    No Product Here
                   </div>
                 </div>
-              ))}
-              </div>
-              : <div className="">
-                <div className="flex justify-center items-center">
-                  <div className="flex justify-center items-center mt-[30px] sm:w-[350px] md:w-[450px]">
-                  <img src={contactImg} alt="" className="w-[80%] sm:w-auto"/>
-                </div>
-                </div>
-                
-                <div className="text-[30px] md:text-[50px] text-slate-200 font-bold text-center mt-[30px]">No Product Here</div>
-              </div>
-              
-              }
+              )}
 
               <div className="flex justify-center sm:justify-end items-center mt-[20px]">
                 {cartProduct.length > 0 && (
@@ -177,9 +192,11 @@ const CartPage = () => {
                     </label>
                   </div>
 
-                  <button className="mt-[20px] outline-none bg-[#19D16F] text-white w-full py-[7px] rounded-[5px]">
-                    <Link to="/checkout">Proceed To Checkout</Link>
-                    
+                  <button
+                    className="mt-[20px] outline-none bg-[#19D16F] text-white w-full py-[7px] rounded-[5px]"
+                    onClick={handleCheckOut}
+                  >
+                    Proceed To Checkout
                   </button>
                 </div>
               </div>

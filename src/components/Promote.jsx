@@ -1,5 +1,6 @@
 import React from "react";
 import promoteImg from "/images/promoteImg.png";
+import { Link } from "react-router-dom";
 
 
 const Promote = () => {
@@ -19,7 +20,8 @@ const Promote = () => {
             </div>
 
             <button className="mt-[20px] bg-pink-600 text-white outline-none py-[5px] px-[15px]">
-              Shop Now
+              <Link to="/shop">Shop Now</Link>
+              
             </button>
           </div>
         </div>

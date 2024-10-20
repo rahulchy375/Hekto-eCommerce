@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import uniqueImg from "/images/uniqueImg.png";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Unique = () => {
+  let allData = useSelector((state) => state.product.data);
+  // console.log(allData);
+
+  let [uniqueProduct, setUniqueProduct] = useState([]);
+  useEffect(() => {
+    if (allData.length > 0) {
+      let filtering = allData.filter((item) => item.unique?.includes("unique"));
+      setUniqueProduct(filtering);
+    }
+  }, [allData]);
+  console.log(uniqueProduct);
+
   return (
     <section id="uniqueSection" className="bg-[#F1F0FF]">
       <div className="container mx-auto p-[10px]">
@@ -35,22 +49,25 @@ const Unique = () => {
             <div className="flex justify-center items-center sm:hidden">
               <img src={uniqueImg} alt="" className="w-[80%]" />
             </div>
+            {uniqueProduct.map((item) =>(
             <div className="flex flex-col sm:flex-row justify-center sm:justify-start items-center mt-[20px]">
               <div className="order-2 sm:order-1">
                 <button className="outline-none text-[13px] sm:text-[16px] my-[20px] border-none bg-[#FB2E86] text-white rounded-[3px] py-[7px] px-[15px]">
-                  Add To Cart
+                  <Link to={`/shop/${item.id}`}>Add To Cart</Link>
+                  
                 </button>
               </div>
 
               <div className="order-1 sm:order-2 text-center sm:text-left sm:ml-[15px]">
                 <h3 className="text-[#2F1AC4] text-[16px] font-bold leading-[15px]">
-                  B&B Italian Sofa{" "}
+                  {item.title}
                 </h3>
                 <p className="text-[#2F1AC4] text-[15px] font-semibold">
-                  $300.99
+                  {item.price}
                 </p>
               </div>
             </div>
+            ))}
           </div>
         </div>
       </div>

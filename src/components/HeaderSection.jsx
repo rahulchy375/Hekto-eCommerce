@@ -10,12 +10,13 @@ import { Link } from "react-router-dom";
 
 const HeaderSection = () => {
   let cartProduct = useSelector((state) => state.product.cart);
+  let loginCheck = useSelector((state) => state.login.value);
   let [threeDot, setThreeDot] = useState(false);
   let handleThreeDot = () => {
     setThreeDot(!threeDot);
   };
 
-  console.log(threeDot);
+  // console.log(threeDot);
 
   return (
     <section id="headerSection" className="bg-[#7E33E0]">
@@ -45,9 +46,15 @@ const HeaderSection = () => {
               English <FaAngleDown />
             </div>
             <div className="">
-              <Link to="/signUp" className="flex items-center mb-[10px] sm:mb-[0px] sm:mr-[10px]">
-                Sign Up <IoPersonOutline />
+              {loginCheck ? 
+              <Link className="flex items-center mb-[10px] sm:mb-[0px] sm:mr-[10px]">
+                Log Out <IoPersonOutline />
               </Link>
+              :
+              <Link to="/login" className="flex items-center mb-[10px] sm:mb-[0px] sm:mr-[10px]">
+                Log In <IoPersonOutline />
+              </Link>
+              }
             </div>
             <div className="flex items-center mb-[10px] sm:mb-[0px] sm:mr-[10px]">
               Wishlist <CiHeart />

@@ -1,6 +1,7 @@
 import React from "react";
 import mainImg from "/images/mainImg.png";
 import mainImg2 from "/images/mainImg2.png";
+import { Link } from "react-router-dom";
 
 const MainSection = () => {
   
@@ -26,7 +27,8 @@ const MainSection = () => {
               <img src={mainImg} alt="Main Image" className="w-[70%] mx-auto sm:mx-0 sm:absolute top-[40px] right-0 md:right-[30px] xl:right-[60px] sm:w-[35%] md:w-[30%] lg:w-[27%] sm:mr-[10px]" />
             </div>
             <button className="border-none text-white outline-none bg-[#FB2E86] font-semibold mb-[30px] py-[5px] px-[15px] sm:mt-[30px] lg:mb-[70px]">
-              Shop Now
+              <Link to="/shop">Shop Now</Link>
+              
             </button>
           </div>
         </div>

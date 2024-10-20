@@ -11,7 +11,8 @@ const Post = ({ setPost, filteredCategory }) => {
   let dispatch = useDispatch();
 
   const handleAddToCart = (item) =>{
-    dispatch(addingProductToCartFromShop({...item, qan:1}))
+    // dispatch(addingProductToCartFromShop({...item, qan:1}))
+    dispatch(addingProductToCart({...item, qan:1}))
     console.log(item);
     
   }

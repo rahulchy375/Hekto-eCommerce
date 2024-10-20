@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import productData from "../api/product.json";
+import { toast } from "react-toastify";
 
 export const productSlice = createSlice({
   name: "product",
@@ -20,25 +21,27 @@ export const productSlice = createSlice({
         state.cart[addingCartProduct].qan += 1;
         localStorage.setItem("hektoCart", JSON.stringify(state.cart));
         console.log(state.cart);
+        toast.success("Quantity Increased!")
       } else{
         state.cart = [...state.cart, action.payload];
         localStorage.setItem("hektoCart", JSON.stringify(state.cart));
+        toast.success("Product has been added!")
       }
     },
 
-    addingProductToCartFromShop: (state, action) =>{
-      // state.cart = action.payload;
+    // addingProductToCartFromShop: (state, action) =>{
+    //   // state.cart = action.payload;
 
-      let addingCartProduct = state.cart.findIndex((item)=>item.id === action.payload.id)
-      if (addingCartProduct !== -1) {
-        state.cart[addingCartProduct].qan += 1;
-        localStorage.setItem("hektoCart", JSON.stringify(state.cart));
-        console.log(state.cart);
-      } else{
-        state.cart = [...state.cart, action.payload];
-        localStorage.setItem("hektoCart", JSON.stringify(state.cart));
-      }
-    },
+    //   let addingCartProduct = state.cart.findIndex((item)=>item.id === action.payload.id)
+    //   if (addingCartProduct !== -1) {
+    //     state.cart[addingCartProduct].qan += 1;
+    //     localStorage.setItem("hektoCart", JSON.stringify(state.cart));
+    //     console.log(state.cart);
+    //   } else{
+    //     state.cart = [...state.cart, action.payload];
+    //     localStorage.setItem("hektoCart", JSON.stringify(state.cart));
+    //   }
+    // },
 
     decrement: (state,action) =>{
       if (state.cart[action.payload].qan > 1) {
@@ -57,11 +60,13 @@ export const productSlice = createSlice({
     removeProduct:(state, action) =>{
       state.cart.splice(action.payload, 1);
       localStorage.setItem("hektoCart", JSON.stringify(state.cart))
+      toast.error("Product has been removed");
     },
 
     clearCart:(state, action) =>{
       state.cart.splice(action.payload, state.cart.length);
       localStorage.setItem("hektoCart", JSON.stringify(state.cart))
+      toast.error("Cart has been Cleared!");
     }
   },
 });
