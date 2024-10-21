@@ -61,7 +61,7 @@ const ProductDetails = () => {
                 <div className="flex justify-center sm:justify-start text-[gold] mb-[10px]">
                   {ratings}
                 </div>
-                <div className="">{singleProduct.price}</div>
+                <div className="">${singleProduct.price} <del className="text-[#FB2E86]">${(singleProduct.price + singleProduct.price/100*5).toFixed(2)}</del></div>
                 <div className="text-[#A9ACC6] lg:w-[80%]">
                   {singleProduct.description}
                 </div>

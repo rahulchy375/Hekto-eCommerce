@@ -73,7 +73,7 @@ const Top = () => {
                     </div>
                   </div>
                   <h3 className="mt-[10px]">{item.title}</h3>
-                  <p>{item.price}</p>
+                  <p>${item.price}</p>
                 </div>
               </div>
             ))}
