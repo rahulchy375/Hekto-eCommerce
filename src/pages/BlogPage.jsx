@@ -7,7 +7,7 @@ const BlogPage = () => {
       <HeadingReuse heading="Blogs" toLink="/" toPage="Home" fromPage="Blog" />
 
       <section>
-        <div className="container mx-auto p-[10px]">Blog Page will be created tomorrow.</div>
+        <div className="container mx-auto p-[10px]">Blog Page will be created soon.</div>
       </section>
     </>
   );
