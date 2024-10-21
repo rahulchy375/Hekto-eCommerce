@@ -61,9 +61,9 @@ const HeaderSection = () => {
             <div className="">
               {loginCheck ? (
                 <div className="" onClick={handleLogOut}>
-                  <Link className="flex items-center mb-[10px] sm:mb-[0px] sm:mr-[10px]">
+                  <div className="cursor-pointer flex items-center mb-[10px] sm:mb-[0px] sm:mr-[10px]">
                     Log Out <IoPersonOutline />
-                  </Link>
+                  </div>
                   {popup && (
                     <div className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  flex justify-center items-center flex-col text-black w-[260px] bg-slate-200 rounded-[5px] px-[20px] py-[30px] ">
                       <h2 className="mb-[10px] text-[18px] font-semibold">Are you sure to log out?</h2>
@@ -74,7 +74,7 @@ const HeaderSection = () => {
                         >
                           Cancel
                         </button>
-                        <button onClick={handleLogOutYes} className="bg-[#FB2E86] w-[100px] py-[7px] text-white rounded-[5px]">Yes</button>
+                        <button onClick={handleLogOutYes} className="bg-[#FB2E86] w-[100px] py-[7px] text-white rounded-[5px]"><Link>Yes</Link></button>
                       </div>
                     </div>
                   )}
