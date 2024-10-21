@@ -30,7 +30,7 @@ const NavSection = () => {
               </div>{" "}
             </li>
             <li className="mb-[5px] sm:mb-0 mr-[10px]"><Link to="/shop">Shop</Link></li>
-            <li className="mb-[5px] sm:mb-0 mr-[10px]">Blogs</li>
+            <li className="mb-[5px] sm:mb-0 mr-[10px]"><Link to="/blog">Blogs</Link></li>
             <li className=""><Link to="/contact">Contact</Link></li>
           </ul>
           <div className="order-3 sm:hidden" onClick={handleBar}>

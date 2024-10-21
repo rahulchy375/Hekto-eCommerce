@@ -1,5 +1,6 @@
 import React from "react";
 import { IoCheckmark } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const DiscountReuse = ({heading,sub,para,one,two,three,four,bg,discountImg}) => {
   return (
@@ -43,7 +44,8 @@ const DiscountReuse = ({heading,sub,para,one,two,three,four,bg,discountImg}) => 
           </div>
           <div className="flex justify-center items-center sm:justify-start">
             <button className="outline-none border-none bg-pink-600 text-white py-[5px] px-[20px] mt-[20px]">
-              Shop Now
+              <Link to="/shop">Shop Now</Link>
+              
             </button>
           </div>
         </div>

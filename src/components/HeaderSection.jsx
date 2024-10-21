@@ -5,12 +5,14 @@ import { FaAngleDown } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 import { IoCartOutline, IoPersonOutline } from "react-icons/io5";
 import { MdPhoneInTalk } from "react-icons/md";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { logOut } from "../slice/loginSlice";
 
 const HeaderSection = () => {
   let cartProduct = useSelector((state) => state.product.cart);
   let loginCheck = useSelector((state) => state.login.value);
+  let dispatch = useDispatch();
   let [threeDot, setThreeDot] = useState(false);
   let handleThreeDot = () => {
     setThreeDot(!threeDot);
@@ -47,9 +49,14 @@ const HeaderSection = () => {
             </div>
             <div className="">
               {loginCheck ? 
-              <Link className="flex items-center mb-[10px] sm:mb-[0px] sm:mr-[10px]">
+              <div className="" onClick={() =>dispatch(logOut())}>
+              <Link  className="flex items-center mb-[10px] sm:mb-[0px] sm:mr-[10px]">
                 Log Out <IoPersonOutline />
               </Link>
+              <div className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  flex justify-center items-center text-black w-[260px] bg-slate-200 rounded-[5px]">
+                
+              </div>
+              </div>
               :
               <Link to="/login" className="flex items-center mb-[10px] sm:mb-[0px] sm:mr-[10px]">
                 Log In <IoPersonOutline />

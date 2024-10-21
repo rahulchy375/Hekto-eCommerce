@@ -18,6 +18,7 @@ import CheckOutPage from "./pages/CheckOutPage";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import PrivateRoute from "./private/PrivateRoute";
+import BlogPage from "./pages/BlogPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
       <Route index element={<HomePage />} />
       <Route path="/shop" element={<ShopPage />} />
       <Route path="/shop/:id" element={<ProductDetails />} />
+      <Route path="/blog" element={<BlogPage/>} />
       <Route path="/faq" element={<FAQ />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/about" element={<AboutPage />} />

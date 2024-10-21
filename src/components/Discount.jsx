@@ -131,46 +131,6 @@ const Discount = () => {
             }
           />
         }
-        {/* {isActive === "Plastic Chair" && (
-          <DiscountReuse
-            heading="20% Discount Of All Products"
-            sub="Eams Sofa Compactv"
-            para="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu eget
-            feugiat habitasse nec, bibendum condimentum."
-            one="Material expose like metals"
-            two="Simple neutral colours."
-            three="Clear lines and geomatric figures"
-            four="Material expose like metals"
-            bg={<img src={bg} alt="" />}
-            discountImg={
-              <img
-                src={discountImg2}
-                alt=""
-                className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
-              />
-            }
-          />
-        )}
-        {isActive === "Sofa Collection" && (
-          <DiscountReuse
-            heading="20% Discount Of All Products"
-            sub="Eams Sofa Compactv"
-            para="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu eget
-            feugiat habitasse nec, bibendum condimentum."
-            one="Material expose like metals"
-            two="Simple neutral colours."
-            three="Clear lines and geomatric figures"
-            four="Material expose like metals"
-            bg={<img src={bg} alt="" />}
-            discountImg={
-              <img
-                src={discountImg3}
-                alt=""
-                className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
-              />
-            }
-          />
-        )} */}
       </div>
     </section>
   );

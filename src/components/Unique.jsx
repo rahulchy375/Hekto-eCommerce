@@ -14,7 +14,7 @@ const Unique = () => {
       setUniqueProduct(filtering);
     }
   }, [allData]);
-  console.log(uniqueProduct);
+  // console.log(uniqueProduct);
 
   return (
     <section id="uniqueSection" className="bg-[#F1F0FF]">
