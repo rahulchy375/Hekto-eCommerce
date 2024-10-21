@@ -125,7 +125,7 @@ const LoginPage = () => {
               </div>
 
               {loader ? (
-                <div className="">
+                <div className="flex justify-center items-center">
                   <DNA
                     visible={true}
                     height="80"

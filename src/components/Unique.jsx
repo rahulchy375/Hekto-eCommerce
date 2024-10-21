@@ -49,8 +49,8 @@ const Unique = () => {
             <div className="flex justify-center items-center sm:hidden">
               <img src={uniqueImg} alt="" className="w-[80%]" />
             </div>
-            {uniqueProduct.map((item) =>(
-            <div className="flex flex-col sm:flex-row justify-center sm:justify-start items-center mt-[20px]">
+            {uniqueProduct.map((item,i) =>(
+            <div className="flex flex-col sm:flex-row justify-center sm:justify-start items-center mt-[20px]" key={i}>
               <div className="order-2 sm:order-1">
                 <button className="outline-none text-[13px] sm:text-[16px] my-[20px] border-none bg-[#FB2E86] text-white rounded-[3px] py-[7px] px-[15px]">
                   <Link to={`/shop/${item.id}`}>Add To Cart</Link>

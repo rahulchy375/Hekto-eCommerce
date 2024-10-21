@@ -83,8 +83,8 @@ const CheckOutPage = () => {
           </div>
 
           <div className="">
-            {cartProduct.map((item)=>(
-            <div className="flex justify-between items-center border-b mt-[30px] pb-[10px]">
+            {cartProduct.map((item,i)=>(
+            <div className="flex justify-between items-center border-b mt-[30px] pb-[10px]" key={i}>
               <div className="flex items-center">
                 <div className="w-[50px] mr-[10px] bg-slate-100 p-[5px] rounded-[5px]">
                   <img src={item.image} alt="" />

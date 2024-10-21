@@ -17,6 +17,7 @@ import CartPage from "./pages/CartPage";
 import CheckOutPage from "./pages/CheckOutPage";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
+import PrivateRoute from "./private/PrivateRoute";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,14 +25,21 @@ const router = createBrowserRouter(
       <Route index element={<HomePage />} />
       <Route path="/shop" element={<ShopPage />} />
       <Route path="/shop/:id" element={<ProductDetails />} />
-      <Route path="/faq" element={<FAQ/>} />
-      <Route path="/contact" element={<ContactPage/>} />
-      <Route path="/about" element={<AboutPage/>} />
-      <Route path="/cart" element={<CartPage/>} />
-      <Route path="/checkout" element={<CheckOutPage/>} />
-      <Route path="/signUp" element={<SignUpPage/>} />
-      <Route path="/login" element={<LoginPage/>} />
-      <Route path="*" element={<ErrorPage/>} />
+      <Route path="/faq" element={<FAQ />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/cart" element={<CartPage />} />
+      <Route
+        path="/checkout"
+        element={
+          <PrivateRoute>
+            <CheckOutPage />
+          </PrivateRoute>
+        }
+      />
+      <Route path="/signUp" element={<SignUpPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="*" element={<ErrorPage />} />
     </Route>
   )
 );
