@@ -65,7 +65,7 @@ const HeaderSection = () => {
                     Log Out <IoPersonOutline />
                   </div>
                   {popup && (
-                    <div className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  flex justify-center items-center flex-col text-black w-[260px] bg-slate-200 rounded-[5px] px-[20px] py-[30px] ">
+                    <div className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  flex justify-center items-center flex-col text-black w-[260px] bg-white rounded-[5px] px-[20px] py-[30px] LogoutConfirmDiv">
                       <h2 className="mb-[10px] text-[18px] font-semibold">Are you sure to log out?</h2>
                       <div className="">
                         <button

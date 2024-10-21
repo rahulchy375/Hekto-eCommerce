@@ -73,6 +73,7 @@ const LoginPage = () => {
         })
         .catch((error) => {
           console.log(error);
+          toast.error("Invalid email and password.")
           setLoader(false);
         });
     }
