@@ -40,9 +40,6 @@ const ProductDetails = () => {
 
   const handleAddingProduct = (item) =>{
     dispatch(addingProductToCart({...item, qan:1}))
-    // console.log(item);
-    
-    
   }
 
   return (
