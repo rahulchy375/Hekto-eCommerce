@@ -1,6 +1,7 @@
 import React from "react";
 
 const Pegination = ({page, prePage, paginating, currentPage, next}) => {
+  
   return (
     <>
       <div className="flex justify-center items-center">

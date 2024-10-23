@@ -78,6 +78,7 @@ const ShopPage = () => {
 
   const paginate = (item) => {
     setCurrentPage(item + 1);
+    
   };
 
   const prePage = () => {
