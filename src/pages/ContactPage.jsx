@@ -1,8 +1,68 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import HeadingReuse from "../reuse/HeadingReuse";
 import contactImg from "/images/ContactImg.png";
+import { useSelector } from "react-redux";
+import { getDatabase, ref, set } from "firebase/database";
+import { DNA } from "react-loader-spinner";
+import { toast } from "react-toastify";
 
 const ContactPage = () => {
+  let loginData = useSelector((state) => state.login.value);
+  let [userName, setUserName] = useState("");
+  let [email, setEmail] = useState("");
+  let [subject, setSubject] = useState("");
+  let [message, setMessage] = useState("");
+  let [loader, setLoader] = useState(false);
+  const handleUserName = (e) => {
+    setUserName(e.target.value);
+  };
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handleSubject = (e) => {
+    setSubject(e.target.value);
+  };
+  const handleMessage = (e) => {
+    setMessage(e.target.value);
+  };
+
+  const handleSendMessage = () => {
+    const db = getDatabase();
+    setLoader(true);
+    setUserName("");
+    setEmail("");
+    setMessage("");
+    setSubject("");
+
+    if (userName === "") {
+      toast.error("Please Enter Your Name.")
+      setLoader(false);
+    } else if (subject === "") {
+      toast.error("Please Enter Your Subject")
+      setLoader(false);
+    } else if (email === "") {
+      toast.error("Please Enter Email")
+      setLoader(false);
+    } else if (message === "") {
+      toast.error("Please Enter Your Message")
+      setLoader(false);
+    } else if (loginData) {
+      set(ref(db, "UserMessages/" + loginData.user.uid), {
+        userName: userName,
+        email: email,
+        subject: subject,
+        message: message,
+      });
+      setLoader(false);
+      toast.success("Message sent successfully!");
+    } else {
+      toast.error("Login data isn't found");
+      setLoader(false);
+    }
+  };
+
+    
+
   return (
     <>
       <HeadingReuse
@@ -86,12 +146,16 @@ const ContactPage = () => {
               <div className="mt-[20px]">
                 <div className="lg:flex gap-[15px]">
                   <input
+                    value={userName}
+                    onChange={handleUserName}
                     type="text"
                     placeholder="Your Name*"
                     required
                     className="border rounded-[5px] p-[5px] w-full mb-[20px] outline-none"
                   />
                   <input
+                    value={email}
+                    onChange={handleEmail}
                     type="email"
                     placeholder="Your email*"
                     required
@@ -99,24 +163,48 @@ const ContactPage = () => {
                   />
                 </div>
                 <input
+                  value={subject}
+                  onChange={handleSubject}
                   type="text"
                   placeholder="Your Subject*"
                   required
                   className="border rounded-[5px] p-[5px] w-full mb-[20px] outline-none"
                 />
                 <textarea
+                  value={message}
+                  onChange={handleMessage}
                   rows={5}
                   placeholder="Write your message*"
                   required
                   className="border rounded-[5px] p-[5px] w-full mb-[20px] outline-none"
                 ></textarea>
-                <button className="bg-[#FB2E86] text-white outline-none lg:mt-[30px] rounded-[5px] px-[35px] py-[7px] mb-[20px]">
-                  Send Mail
-                </button>
+                {loader === true ? (
+                  <div className="">
+                    <DNA
+                      visible={true}
+                      height="80"
+                      width="80"
+                      ariaLabel="dna-loading"
+                      wrapperStyle={{}}
+                      wrapperClass="dna-wrapper"
+                    />
+                  </div>
+                ) : (
+                  <button
+                    className="bg-[#FB2E86] text-white outline-none lg:mt-[30px] rounded-[5px] px-[35px] py-[7px] mb-[20px]"
+                    onClick={handleSendMessage}
+                  >
+                    Send Mail
+                  </button>
+                )}
               </div>
             </div>
             <div className="order-1 md:order-2 md:w-[48%] sm:flex justify-center items-center">
-              <img src={contactImg} alt="" className="sm:w-[70%] md:w-full lg:w-[80%]" />
+              <img
+                src={contactImg}
+                alt=""
+                className="sm:w-[70%] md:w-full lg:w-[80%]"
+              />
             </div>
           </div>
         </div>
