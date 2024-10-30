@@ -160,6 +160,7 @@ const FAQ = () => {
           </div>
         </div>
       </section>
+      {/* okk */}
     </>
   );
 };
